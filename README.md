@@ -41,29 +41,26 @@ SHOW MASTER STATUS;
 ```
 #Правим конфиг
 nano /etc/mysql/mysql.conf.d/mysqld.cnf
-```
+
 #Добавляем в конфигурацию
 [mysqld]
 server-id = 2
 relay-log = mysql-relay-bin
 read_only = 1
-```
+
 #Рестарт службы
 sudo systemctl restart mysql
-```
+
 # Настройка репликации 
-
 STOP SLAVE;
-
 CHANGE MASTER TO
   MASTER_HOST='IP_MASTER',
   MASTER_USER='repl',
   MASTER_PASSWORD='replpass',
   MASTER_LOG_FILE='mysql-bin.000001',
   MASTER_LOG_POS=157;
-
 START SLAVE;
-```
+
 #Проверка репликации 
 SHOW SLAVE STATUS\G
 ```
