@@ -35,7 +35,7 @@ sudo systemctl restart mysql
 #Получаем бинарный лог 
 SHOW MASTER STATUS;
 ```
-[скриншот мастер](https://github.com/Agooll007/Avetisov-HW_12_06/blob/main/img/2026-01-19_04-50-35.png)
+[!alt text](https://github.com/Agooll007/Avetisov-HW_12_06/blob/main/img/2026-01-19_04-50-35.png)
 
 #### На Slave:
 ```
@@ -64,6 +64,6 @@ START SLAVE;
 #Проверка репликации 
 SHOW SLAVE STATUS\G
 ```
-[скриншот slave](https://github.com/Agooll007/Avetisov-HW_12_06/blob/main/img/2026-01-19_04-50-25.png)
+[!alt text](https://github.com/Agooll007/Avetisov-HW_12_06/blob/main/img/2026-01-19_04-50-25.png)
 
 
