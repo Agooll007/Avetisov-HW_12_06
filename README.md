@@ -22,26 +22,21 @@ Master-Master:
 ```
 #Правим конфиг
 nano /etc/mysql/mysql.conf.d/mysqld.cnf
-```
+
 #Добавляем в конфигурацию
 [mysqld]
 server-id = 1
 log_bin = mysql-bin
 bind-address = 0.0.0.0
-```
+
 #Рестарт службы
 sudo systemctl restart mysql
-```
-# Создаем пользователя и применяем 
-CREATE USER 'repl'@'%' IDENTIFIED WITH mysql_native_password BY 'replpass';
-GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
-FLUSH PRIVILEGES;
-```
+
 #Получаем бинарный лог 
 SHOW MASTER STATUS;
 ```
 [скриншот мастер]
-```
+
 #### На Slave:
 ```
 #Правим конфиг
